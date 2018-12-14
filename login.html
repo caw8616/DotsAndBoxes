@@ -1,0 +1,119 @@
+<html>
+  <head>
+    <title>Login</title>
+      <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="js/utilities.js" type="text/javascript"></script>
+    <script src="js/login.js" type="text/javascript"></script>
+    <script src="js/validate.js" type="text/javascript"></script>
+
+    <script>
+        
+	$(document).ready(function(){
+        checkLoggedIn();
+        setLogin();
+        document.getElementById('login_button').addEventListener('click', function() {
+            setLogin();
+        }, false);
+        document.getElementById('signup_button').addEventListener('click', function() {
+            setSignUp();
+        }, false);
+        		
+     });
+    function checkLoggedIn(){
+        MyXHR('get',{method:"checkSession",a:"login"}).done(function(json){
+            if(json.username) {
+                window.location.replace("index.html");
+            }
+        });
+    }
+    function setLogin() {
+        var loginButton = document.getElementById('login_button');
+        var signupButton = document.getElementById('signup_button');
+        if(!loginButton.classList.contains("active")) {
+            if(signupButton.classList.contains("active")) {
+                signupButton.classList.remove("active");
+            }
+            loginButton.classList.add("active");
+        document.getElementById('choice_content').innerHTML = "<div class='form'><form name='login' id='loginForm'><label for='username'>Username: </label><input type='text'  name='username' id='username' value='user1'><br><br><label for='password'>Password: </label><input type='password' name='password' id='password' value='password'><br><br><input type='submit' value='Submit'/></form></div>";
+        }
+		document.getElementById("loginForm").addEventListener('submit',function(event) {
+            event.preventDefault();
+            var user = document.getElementById('username').value;
+            var pass = document.getElementById('password').value;
+            if(validateLogin(user, pass)) {
+                checkLogin(user, pass);
+            } 
+	   },false);
+    }
+    function setSignUp() {
+       var loginButton = document.getElementById('login_button');
+        var signupButton = document.getElementById('signup_button');
+        if(!signupButton.classList.contains("active")) {
+            if(loginButton.classList.contains("active")) {
+                loginButton.classList.remove("active");
+            }
+            signupButton.classList.add("active");
+            document.getElementById('choice_content').innerHTML = "<div class='form'><form name='signup' id='signupForm'><label for='first_name'>First Name: </label><input type='text' id='first_name' name='first_name' value='MyFirst'><br><br><label for='last_name'>Last Name: </label><input type='text' id='last_name' name='last_name' value='MyLast'><br><br><label for='username'>Username: </label><input type='text' id='username' name='username' value='MyUser'><br><br><label for='password'>Password: </label><input type='password' id='password' name='password' value='MyPassword'><br><br><input type='submit' value='Submit'/></form></div>";
+        }
+		document.getElementById("signupForm").addEventListener('submit',function(event) {
+            event.preventDefault();
+            var first = document.getElementById('first_name').value;
+            var last = document.getElementById('last_name').value;
+            var user = document.getElementById('username').value;
+            var pass = document.getElementById('password').value;
+            if(validateSignUp(user, pass, first, last)) {
+                checkSignup(first, last, user, pass);
+            }
+		},false);
+    }
+        
+                //at least one letter 
+  
+     function checkLogin(user, pass){
+        
+            MyXHR('get',{method:"checkPlayer",a:"login",data:user+"|"+pass}).done(function(json){
+                console.log(json);
+                if (json.error) {
+                    $('#error').html(json.error);
+                    console.log(json.error);
+                } else {
+                    window.location.replace("index.html");
+                }
+            });
+     }  
+     function checkSignup(first, last, user, pass){
+            console.log(user+"|"+pass+"|"+first+"|"+last);
+            MyXHR('post',{method:"createPlayer",a:"login",data:user+"|"+pass+"|"+first+"|"+last}).done(function(json){
+				console.log(json);
+                if (json.error) {
+                    $('#error').html(json.error);
+                    console.log(json.error);
+                } else {
+                    window.location.replace("index.html");
+                }
+            });
+     }
+        
+     
+    </script>
+  </head>
+
+  <body>
+      <div id="login_content">
+          <h1>Dots and Boxes</h1>
+        <div id="error">
+          </div>
+          <div id = "login"> 
+              <div id="loginNav">
+                <div id="login_button">Log In</div>
+                <div id="signup_button">Sign Up</div>
+              </div>
+              <div id="choice_content">
+              </div>
+          </div>
+      </div>
+  </body>
+</html>
+<!--https://stackoverflow.com/questions/520237/how-do-i-expire-a-php-session-after-30-minutes-->
+<!--http://php.net/manual/en/function.session-create-id.php-->

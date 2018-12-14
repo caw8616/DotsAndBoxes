@@ -1,0 +1,285 @@
+<html>
+  <head>
+    <title>Lobby</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="js/utilities.js" type="text/javascript"></script>
+    <script src="js/validate.js" type="text/javascript"></script>
+
+      <script src="js/chat.js" type="application/javascript"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script>
+	$(document).ready(function(){
+        console.log(document.cookie);
+        
+//      checkLoggedIn();
+//		getTurn();
+		getChat();
+		getOnline();
+        getChallenges();
+        getGames();
+        
+         document.getElementById("newChatForm").addEventListener('submit',function(event) {
+            event.preventDefault();
+            var message = document.getElementById('message').value;
+            if(validateChat(message)) {
+                sendChat(message);
+            } 
+	   },false);
+     });
+        
+     
+     
+     ////////////////
+     // chat stuff
+     ////////////////
+     function getChat(){
+     	MyXHR('get',{method:'getChat',a:'chat'}).done(function(json){
+//            console.log(json);
+            if(json.loggedOut) {
+            window.location.replace("login.html");
+            } else {
+                var h='';
+                var m='';
+                for(i=0;i<json.length;i++){
+                    m+="<li><strong>"+json[i].username+':</strong> '+json[i].message+'</li>';
+                }
+//                for(i=0;i<json.length;i++){
+//                    h+=json[i].username+': '+json[i].message+'<span style="color:gray"> at time '+json[i].timestamp+'</span><br/>';
+//                }
+//                $('#chats').html(h);
+                
+                $('#conversation').find("ul").html(m);
+                setTimeout('getChat()',2000); 
+            }
+     	});
+     }
+    function sendChat(message){
+     	MyXHR('post',{method:'sendChat',a:'chat',data:message}).done(function(json){
+//            console.log(json);
+            if(json.loggedOut) {
+                window.location.replace("login.html");
+            } else {
+                if(json.success == 1) {
+                document.getElementById('message').value = "";
+                    $('#chats').append(json.username+': '+json.message+'<span style="color:gray"> at time '+json.timestamp+'</span><br/>');
+                } else {
+                   
+                    $('#error').html(json.error);
+                }
+            }
+     	});
+     }
+    
+        
+     ////////////////
+     // game stuff
+     ////////////////
+        
+    function getOnline(){
+     	MyXHR('get',{method:'getPlayersOn',a:'challenge'}).done(function(json){
+//            console.log(json);
+            if(json.loggedOut) {
+            window.location.replace("login.html");
+            } else {
+                var h='';
+                for(i=0;i<json.length;i++){
+                    h+='<div id="div_'+json[i].player_id+'">'+json[i].username+'<span style="color:gray"> in room '+json[i].room+'</span><button type="button" id="'+json[i].player_id+'" onclick="challengePlayer(this)">Challenge Player</button></div><br/>';
+                }
+                $('#online').html(h);
+                setTimeout('getOnline()',2000); 
+            }
+     	});
+     } 
+    function getChallenges(){
+        
+     	MyXHR('get',{method:'getChallenges',a:'challenge'}).done(function(json){
+//            console.log(json);
+            if(json.loggedOut) {
+                window.location.replace("login.html");
+            } else {
+
+                var h='';
+                var p='';
+                for(i=0;i<json.length;i++){
+                   if( getCookie('player_id') == -1) {
+                        MyXHR('post',{method:'logMeOut',a:'login'}).done(function(json){
+                            window.location.replace("login.html");
+                        });
+                   }
+                    if(getCookie('player_id') == json[i].challenged) {
+                       h+='<div>'+json[i].username+' challenged you to a game! <span style="color:gray"> at time '+json[i].timestamp+'</span><br/><button type="button" id="'+json[i].challenge_id+'" onclick="acceptChallenge(this)">Accept Challenge</button><button type="button" id="'+json[i].challenge_id+'" onclick="declineChallenge(this)">Decline Challenge</button></div>';
+                        
+                    } else {
+
+                         p+='<div>You challenged '+json[i].username+' to a game! <span style="color:gray"> at time '+json[i].timestamp+'</span><br/><button type="button" id="'+json[i].challenge_id+'" onclick="declineChallenge(this)">Cancel Challenge</button></div>';
+                    }
+                }
+//                console.log(list);
+                $('#challenges').html(h);
+                $('#mychallenges').html(p);
+                setTimeout('getChallenges()',2000); 
+            }
+     	});
+     }
+    function challengePlayer(button){
+//        console.log(button.id);
+        MyXHR('post',{method:'challengePlayer',a:'challenge',data:button.id+"|4"}).done(function(json){
+            console.log(json);
+            if(json.loggedOut) {
+            window.location.replace("login.html");
+            } else {
+                if (json.error) {
+                    $('#error').html(json.error);
+                    console.log(json.error);
+                } else {
+                    console.log("Successful Challenge");
+                }
+            }
+        });
+    }
+    function acceptChallenge(button){
+//          console.log(button.id);
+        MyXHR('post',{method:'acceptChallenge',a:'challenge',data:button.id}).done(function(json){
+            console.log(json);
+            if(json.loggedOut) {
+            window.location.replace("login.html");
+            } else {
+                if (json.error) {
+                    $('#error').html(json.error);
+                    console.log(json.error);
+                } else {
+                    console.log(json.game_id);
+                }
+            }
+        });
+    }
+    function declineChallenge(button){
+        MyXHR('post',{method:'declineChallenge',a:'challenge',data:button.id}).done(function(json){
+            console.log(json);
+            if(json.loggedOut) {
+            window.location.replace("login.html");
+            } else {
+                if(json.success == 1) {
+                    console.log("Cancel Successful");
+                } else {
+                    console.log("Cancel Unsuccessful");
+                }
+            }
+        });
+    }
+ 
+
+        
+    function getGames(){
+     	MyXHR('get',{method:'getGames',a:'challenge'}).done(function(json){
+            console.log(json);
+            if(json.loggedOut) {
+            window.location.replace("login.html");
+            } else {
+                var h='';
+                for(i=0;i<json.length;i++){
+//                    if()
+                    h+=json[i].game_id+': '+json[i].player_1+' vs '+json[i].player_2+' \<span style="color:gray"> '+json[i].score_1+' to '+json[i].score_2+'</span><br/><span style="color:red">Its '+json[i].turn+'\'s Turn!</span><br/>';
+                }
+                $('#games').html(h);
+                setTimeout('getGames()',2000); 
+            }
+     	});
+     }
+
+   function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+    
+     
+    </script>
+      
+<!--
+      <style>
+          ul {
+               list-style: none; 
+              padding: 0;
+          }
+/*
+          #conversation {
+               float: right;
+              width: 250px;
+          }
+*/
+          #chatter {
+              position: fixed;
+              right:0;
+              top:20;
+          
+/*
+              right:100px;
+   top:150px;
+*/
+          }
+      </style>
+-->
+  </head>
+
+  <body>
+       <button type="button" id="logout" onclick='logout()'>Logout</button>
+<!--    <h5></h5>-->
+      <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-8">
+              <div class="row">
+                    <h3>Online Players</h3>
+                    <div id="online"></div>
+                </div>
+                <div class="row">
+                  <h3>Challenges</h3>
+                  <div id="challenges"></div>
+                </div>
+                <div class="row">
+                    <h3>My Challenges</h3>
+                    <div id="mychallenges"></div>
+                </div>
+                <div class="row">
+                  <h3>Games</h3>
+                  <div id="games"></div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-md-4">
+                <div id="chatter">
+              <h3>Chats</h3>
+    <!--          <div id="chats"></div>-->
+            <div id="conversation" class="pre-scrollable"><ul></ul></div>
+              <br>
+             <br>
+              <div id="newChat">
+                  <form name='newChat' id='newChatForm'>
+                      <textarea name='message' id='message' rows="4" cols="50" maxlength="120"></textarea>
+                      <br>
+                      <br>
+                      <input type='submit' value='Submit'/>
+                  </form>
+                    <div id="error"></div>
+              </div>
+          </div>
+            </div>
+
+  </body>
+</html>
