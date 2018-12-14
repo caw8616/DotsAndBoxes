@@ -1,3 +1,8 @@
+
+<?php
+    session_name("playerSession");
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,17 +22,11 @@
 		.name_black{fill:black;font-size:18px}
 		.name_orange{fill:orange;font-size:24px;}
 		text{pointer-events:none;user-select:none;}
-/*
          ul {
                list-style: none; 
               padding: 0;
           }
-          #chatter {
-              position: fixed;
-              right:0;
-              top:20;
-          }
-*/
+
 	</style>
 	<script src="http://code.jquery.com/jquery-latest.js"></script>
 <!--        <script src="js/jquery-3.3.1.min.js"></script>-->
@@ -39,7 +38,11 @@
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="js/utilities.js"></script>
+    <script src="js/utilities.js" type="text/javascript"></script>
+
+    <script src="js/validate.js" type="text/javascript"></script>
+    <script src="js/chat.js" type="application/javascript"></script>
+
 	<script src="js/Objects/Box.js" type="text/javascript"></script>
     <script src="js/Objects/Dot.js" type="text/javascript"></script>
 <!--    <script src="js/Objects/Line.js" type="text/javascript"></script>-->
@@ -50,10 +53,69 @@
 	<script src="js/ajaxFunctions.js" type="text/javascript"></script>
 	<script type="text/javascript">
 			var gameId=<?php echo $_GET['gameId'] ?>;
-			var player="<?php echo $_GET['player']?>";
+			var player="<?php echo $_SESSION['username']?>";
 			//need line to start it all here....
 			ajax.initGameAjax("start", gameId);
-	</script>
+	
+        
+	$(document).ready(function(){
+        console.log(document.cookie);
+		getChat();
+        document.getElementById("newChatForm").addEventListener('submit',function(event) {
+            event.preventDefault();
+            var message = document.getElementById('message').value;
+            if(validateChat(message)) {
+                sendChat(message);
+            } 
+	   },false);
+     });
+        
+     
+     
+     ////////////////
+     // chat stuff
+     ////////////////
+     function getChat(){
+     	MyXHR('get',{method:'getChatRoom',a:'chat', data:'<?php echo $_GET['gameId'] ?>'}).done(function(json){
+//            console.log(json);
+            if(json.loggedOut) {
+            window.location.replace("login.html");
+            } else {
+                console.log(json);
+                var h='';
+                var m='';
+                for(i=0;i<json.length;i++){
+                    m+="<li><strong>"+json[i].username+':</strong> '+json[i].message+'</li>';
+                }
+//                for(i=0;i<json.length;i++){
+//                    h+=json[i].username+': '+json[i].message+'<span style="color:gray"> at time '+json[i].timestamp+'</span><br/>';
+//                }
+//                $('#chats').html(h);
+                
+                $('#conversation').find("ul").html(m);
+                setTimeout('getChat()',2000); 
+            }
+     	});
+     }
+    function sendChat(message){
+        document.getElementById('message').value = "";
+
+     	MyXHR('post',{method:'sendChatRoom',a:'chat',data:"<?php echo $_GET['gameId'] ?>|"+message}).done(function(json){
+//            console.log(json);
+            if(json.loggedOut) {
+                window.location.replace("login.html");
+            } else {
+                if(json.success == 1) {
+                    $('#conversation').find("ul").append("<li><strong>"+json[i].username+':</strong> '+json[i].message+'</li>');
+                } else {
+                   
+                    $('#error').html(json.error);
+                }
+            }
+     	});
+     }
+            
+    </script>
 </head>
 <body>
     <div class="container-fluid">
@@ -67,6 +129,12 @@
                 <text x="20px" y="20px" id="youPlayer">
                     You are:
                 </text>
+                <text x="20px" y="40px" id="output">
+                    Score: 
+                </text>
+                <text x="100px" y="40px" id="score0">
+                    
+                </text>
                 <text x="270px" y="20px" id="nyt" fill="red" display="none">
                     NOT YOUR TURN!
                 </text>
@@ -76,18 +144,14 @@
                 <text x="520px" y="20px" id="opponentPlayer">
                     Opponent is:
                 </text>
-                <text x="600px" y="150px" id="output">
-                    Your Score: 
+                <text x="520px" y="40px" id="output">
+                    Score: 
                 </text>
-                <text x="750px" y="150px" id="score0">
-
+                <text x="620px" y="40px" id="score1">
+                    
                 </text>
-                <text x="600px" y="190px" id="output2">
-                    Opponent's Score:
-                </text>
-                <text x="750px" y="190px" id="score1">
-
-                </text>
+              
+            
                 <text x="900px" y="190px" id="result">
 
                 </text>
@@ -98,7 +162,10 @@
                   <div id="chatter">
                       <h3>Chats</h3>
             <!--          <div id="chats"></div>-->
+                     <div class="pre-scrollable">
+
                     <div id="conversation"><ul></ul></div>
+                      </div>
                       <br>
                      <br>
                       <div id="newChat">

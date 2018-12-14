@@ -26,9 +26,7 @@
             } else {
                return getPlayersOnData($_SESSION['player_id']);
             }
-        }
-        
-        
+        } 
 	}
    function getChallenges(){
         $data = array();
@@ -78,7 +76,10 @@
                 $data['loggedOut'] = 'No user logged in';
                 return returnJsonEncode($data);            
             } else {
-               return challengePlayerData($_SESSION['player_id'], $player_id, $board_size);
+                $playerJson = getPlayerNameData($player_id);
+                $playerData = json_decode($playerJson, true)[0];
+                
+               return challengePlayerData($_SESSION['player_id'], $_SESSION['username'], $player_id, $playerData['username'],$board_size);
             }
         }
 	}
@@ -105,7 +106,7 @@
                $challenge = getThisChallengeData($challenge_id);
                $challengeData = json_decode($challenge, true)[0];
                 if($challengeData['challenge_id']) {
-                    $game = createGameData($challengeData['board_size'], $challengeData['challenger'], $challengeData['challenged'], createGameBoard($challengeData['board_size'])); 
+                    $game = createGameData($challengeData['board_size'], $challengeData['challenger'], $challengeData['challenger_name'], $challengeData['challenged'], $challengeData['challenged_name'], createGameBoard($challengeData['board_size'])); 
                     
 //                    "INSERT INTO game (board_size, player_0, player_1, player0_name, player1_name, num_moves,   turn, active
                     $gameData = json_decode($game, true);
@@ -153,29 +154,6 @@
         return $boardstring;
     }
 
-//    function createGameBoard($size) {       
-//        $rows = $size-1;
-//        $cols = $size;
-//        $num = ($size * 2)-1;
-//        $boardstring = "";
-//        for($i = 1; $i<=$num; $i++) {
-//            if(($i%2) == 0) {
-//                $boardstring .= "|";
-//                for($j = 0; $j<$cols; $j++) {
-//                    $boardstring .= "0";   
-//                }
-//            } else {
-//                if($i!=1) {
-//                    $boardstring .= "|";
-//                }
-//                for($j = 0; $j<$rows; $j++) {
-//                     $boardstring .= "0";   
-//                }                
-//            }
-//        }
-////        echo nl2br($boardstring." \n");
-//        return $boardstring;
-//    }
 
     
 
@@ -233,6 +211,7 @@
         
 	}
 
+  
 	
 ?>
 

@@ -61,14 +61,15 @@
      	});
      }
     function sendChat(message){
+        document.getElementById('message').value = "";
+
      	MyXHR('post',{method:'sendChat',a:'chat',data:message}).done(function(json){
 //            console.log(json);
             if(json.loggedOut) {
                 window.location.replace("login.html");
             } else {
                 if(json.success == 1) {
-                document.getElementById('message').value = "";
-                    $('#chats').append(json.username+': '+json.message+'<span style="color:gray"> at time '+json.timestamp+'</span><br/>');
+                    $('#conversation').find("ul").append("<li><strong>"+json[i].username+':</strong> '+json[i].message+'</li>');
                 } else {
                    
                     $('#error').html(json.error);
@@ -131,6 +132,7 @@
     function challengePlayer(button){
 //        console.log(button.id);
         MyXHR('post',{method:'challengePlayer',a:'challenge',data:button.id+"|4"}).done(function(json){
+            console.log("CHALLENGE PLAYER");
             console.log(json);
             if(json.loggedOut) {
             window.location.replace("login.html");
@@ -179,21 +181,44 @@
         
     function getGames(){
      	MyXHR('get',{method:'getGames',a:'challenge'}).done(function(json){
-            console.log(json);
+//            console.log(json);
             if(json.loggedOut) {
             window.location.replace("login.html");
             } else {
                 var h='';
                 for(i=0;i<json.length;i++){
 //                    if()
-                    h+=json[i].game_id+': '+json[i].player_1+' vs '+json[i].player_2+' \<span style="color:gray"> '+json[i].score_1+' to '+json[i].score_2+'</span><br/><span style="color:red">Its '+json[i].turn+'\'s Turn!</span><br/>';
+                    var turn ="";
+                    if(json[i].turn == 0) {
+                        turn = json[i].player0_name;
+                    } else {
+                        turn = json[i].player1_name;
+                    }
+                    h+=json[i].game_id+': '+json[i].player0_name+' vs '+json[i].player1_name+' \<span style="color:gray"> '+json[i].score_0+' to '+json[i].score_1+'</span><br/><span style="color:red">Its '+turn+'\'s Turn!</span><br/><a href="board.php?gameId='+json[i].game_id+'">Go To Game</a>';
+                    
+                    
+//                    <button type="button" id="game_'+json[i].game_id+'" onclick="goToGame()">Go To Game</button>';
+                    
                 }
                 $('#games').html(h);
                 setTimeout('getGames()',2000); 
             }
      	});
      }
-
+//    function goToGame(button) {
+//        MyXHR('post',{method:'goToGame',a:'challenge',data:button.id}).done(function(json){
+//            console.log(json);
+//            if(json.loggedOut) {
+//            window.location.replace("login.html");
+//            } else {
+//                if(json.success == 1) {
+//                    console.log("Cancel Successful");
+//                } else {
+//                    console.log("Cancel Unsuccessful");
+//                }
+//            }
+//        });
+//    }
    function getCookie(cname) {
     var name = cname + "=";
     var decodedCookie = decodeURIComponent(document.cookie);
@@ -213,30 +238,13 @@
      
     </script>
       
-<!--
       <style>
           ul {
                list-style: none; 
               padding: 0;
           }
-/*
-          #conversation {
-               float: right;
-              width: 250px;
-          }
-*/
-          #chatter {
-              position: fixed;
-              right:0;
-              top:20;
-          
-/*
-              right:100px;
-   top:150px;
-*/
-          }
+
       </style>
--->
   </head>
 
   <body>
@@ -266,7 +274,9 @@
                 <div id="chatter">
               <h3>Chats</h3>
     <!--          <div id="chats"></div>-->
-            <div id="conversation" class="pre-scrollable"><ul></ul></div>
+                    <div class="pre-scrollable">
+            <div id="conversation"><ul></ul></div>
+                    </div>
               <br>
              <br>
               <div id="newChat">

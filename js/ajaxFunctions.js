@@ -20,11 +20,9 @@ var ajax = {
 	//goes out and gets all pertinant information about the game (FOR ME)
 	////////////////
 	initGameAjax: function (whatMethod, val){
-        console.log("YOU REACHED AJAX");
 		//data is gameId
         MyXHR('POST',{method:whatMethod,a:'game',data:val}).done(function(jsonObj){
 //            console.log(json);
-            console.log(jsonObj);
 			turn = jsonObj[0].turn;
 			if (player == jsonObj[0].player0_name) {
                 player = jsonObj[0].player0_name;
