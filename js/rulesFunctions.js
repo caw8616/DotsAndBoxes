@@ -97,7 +97,7 @@ var rules={
                             } else if(winner == oppId) {
                                 document.getElementById("result").firstChild.data="GAME OVER! YOU LOST! :(";
 
-                                ajax.addWinnerAjax("addWinner", gameId, id_them);
+                                ajax.addWinnerAjax("addWinner", gameId, id_opp);
                             } else {
                                 document.getElementById("result").firstChild.data="GAME OVER! YOU TIED! :/";
 
@@ -341,14 +341,23 @@ var rules={
         //add to score
     },
     addScore() {
+        console.log("Play ID:"+this.playId);
         if(this.playId == 0) {
             game.p0_score +=1;
-            document.getElementById('score0').firstChild.data=game.p0_score;
+            if( playerId == this.playId) {
+                document.getElementById('score0').firstChild.data=game.p0_score;
+            } else {
+                document.getElementById('score1').firstChild.data=game.p0_score;
+            }
             
             
         } else {
             game.p1_score +=1;
-            document.getElementById('score1').firstChild.data=game.p1_score;
+            if( playerId == this.playId) {
+                document.getElementById('score0').firstChild.data=game.p1_score;
+            } else {
+                document.getElementById('score1').firstChild.data=game.p1_score;
+            }
         }
         if(this.playId == playerId) {
             ajax.changeBoardAjax(this.dot_1.id+","+this.dot_2.id,"changeBoard", gameId);

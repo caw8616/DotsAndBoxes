@@ -81,7 +81,6 @@
             if(json.loggedOut) {
             window.location.replace("login.html");
             } else {
-                console.log(json);
                 var h='';
                 var m='';
                 for(i=0;i<json.length;i++){

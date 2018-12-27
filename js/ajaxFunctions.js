@@ -82,7 +82,6 @@ var ajax = {
         MyXHR('GET',{method:whatMethod,a:'game',data:val}).done(function(jsonObj){
 
 //			ajax.ajaxCall("GET",{method:whatMethod,a:"game",data:val}).done(function(jsonObj){
-                console.log(jsonObj);
 				if(jsonObj[0].turn == playerId){
 					//switch turns
                     if(turn != jsonObj[0].turn) {

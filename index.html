@@ -133,7 +133,6 @@
 //        console.log(button.id);
         MyXHR('post',{method:'challengePlayer',a:'challenge',data:button.id+"|4"}).done(function(json){
             console.log("CHALLENGE PLAYER");
-            console.log(json);
             if(json.loggedOut) {
             window.location.replace("login.html");
             } else {
