@@ -17,12 +17,12 @@
     <script>
 	$(document).ready(function(){
         console.log(document.cookie);
-        
+        setRoom();
 //      checkLoggedIn();
-//		getTurn();
 		getChat();
 		getOnline();
         getChallenges();
+        getChallenged();
         getGames();
         
          document.getElementById("newChatForm").addEventListener('submit',function(event) {
@@ -34,12 +34,20 @@
 	   },false);
      });
         
+    function setRoom(){
+     	MyXHR('get',{method:'setRoom',a:'login',data:0}).done(function(json){
+            if(json.loggedOut) {
+            window.location.replace("login.html");
+            }  
+     	});
+     }   
      
      
      ////////////////
      // chat stuff
      ////////////////
      function getChat(){
+//         console.log('getChat');
      	MyXHR('get',{method:'getChat',a:'chat'}).done(function(json){
 //            console.log(json);
             if(json.loggedOut) {
@@ -62,16 +70,13 @@
      }
     function sendChat(message){
         document.getElementById('message').value = "";
-
      	MyXHR('post',{method:'sendChat',a:'chat',data:message}).done(function(json){
-//            console.log(json);
             if(json.loggedOut) {
                 window.location.replace("login.html");
             } else {
                 if(json.success == 1) {
                     $('#conversation').find("ul").append("<li><strong>"+json[i].username+':</strong> '+json[i].message+'</li>');
                 } else {
-                   
                     $('#error').html(json.error);
                 }
             }
@@ -84,6 +89,7 @@
      ////////////////
         
     function getOnline(){
+//                 console.log('getOnline');
      	MyXHR('get',{method:'getPlayersOn',a:'challenge'}).done(function(json){
 //            console.log(json);
             if(json.loggedOut) {
@@ -99,7 +105,8 @@
      	});
      } 
     function getChallenges(){
-        
+//                 console.log('getChallenges');
+
      	MyXHR('get',{method:'getChallenges',a:'challenge'}).done(function(json){
 //            console.log(json);
             if(json.loggedOut) {
@@ -107,28 +114,79 @@
             } else {
 
                 var h='';
+                for(i=0;i<json.length;i++){
+                   if( getCookie('player_id') == -1) {
+                        MyXHR('post',{method:'logMeOut',a:'login'}).done(function(json){
+                            window.location.replace("login.html");
+                        });
+                   } else {
+                        h+='<div>'+json[i].username+' challenged you to a game! <span style="color:gray"> at time '+json[i].timestamp+'</span><br/><button type="button" id="'+json[i].challenge_id+'" onclick="acceptChallenge(this)">Accept Challenge</button><button type="button" id="'+json[i].challenge_id+'" onclick="declineChallenge(this)">Decline Challenge</button></div>';
+                   }
+                }
+//                console.log(list);
+                $('#challenges').html(h);
+                setTimeout('getChallenges()',2000); 
+            }
+     	});
+     }
+        function getChallenged(){
+//         console.log('getChallenged');
+
+     	MyXHR('get',{method:'getChallenged',a:'challenge'}).done(function(json){
+//            console.log(json);
+            if(json.loggedOut) {
+                window.location.replace("login.html");
+            } else {
+
                 var p='';
                 for(i=0;i<json.length;i++){
                    if( getCookie('player_id') == -1) {
                         MyXHR('post',{method:'logMeOut',a:'login'}).done(function(json){
                             window.location.replace("login.html");
                         });
-                   }
-                    if(getCookie('player_id') == json[i].challenged) {
-                       h+='<div>'+json[i].username+' challenged you to a game! <span style="color:gray"> at time '+json[i].timestamp+'</span><br/><button type="button" id="'+json[i].challenge_id+'" onclick="acceptChallenge(this)">Accept Challenge</button><button type="button" id="'+json[i].challenge_id+'" onclick="declineChallenge(this)">Decline Challenge</button></div>';
-                        
+                   
                     } else {
 
                          p+='<div>You challenged '+json[i].username+' to a game! <span style="color:gray"> at time '+json[i].timestamp+'</span><br/><button type="button" id="'+json[i].challenge_id+'" onclick="declineChallenge(this)">Cancel Challenge</button></div>';
                     }
                 }
 //                console.log(list);
-                $('#challenges').html(h);
                 $('#mychallenges').html(p);
-                setTimeout('getChallenges()',2000); 
+                setTimeout('getChallenged()',2000); 
             }
      	});
      }
+//    function getChallenges(){
+//        
+//     	MyXHR('get',{method:'getChallenges',a:'challenge'}).done(function(json){
+////            console.log(json);
+//            if(json.loggedOut) {
+//                window.location.replace("login.html");
+//            } else {
+//
+//                var h='';
+//                var p='';
+//                for(i=0;i<json.length;i++){
+//                   if( getCookie('player_id') == -1) {
+//                        MyXHR('post',{method:'logMeOut',a:'login'}).done(function(json){
+//                            window.location.replace("login.html");
+//                        });
+//                   }
+//                    if(getCookie('player_id') == json[i].challenged) {
+//                       h+='<div>'+json[i].username+' challenged you to a game! <span style="color:gray"> at time '+json[i].timestamp+'</span><br/><button type="button" id="'+json[i].challenge_id+'" onclick="acceptChallenge(this)">Accept Challenge</button><button type="button" id="'+json[i].challenge_id+'" onclick="declineChallenge(this)">Decline Challenge</button></div>';
+//                        
+//                    } else {
+//
+//                         p+='<div>You challenged '+json[i].username+' to a game! <span style="color:gray"> at time '+json[i].timestamp+'</span><br/><button type="button" id="'+json[i].challenge_id+'" onclick="declineChallenge(this)">Cancel Challenge</button></div>';
+//                    }
+//                }
+////                console.log(list);
+//                $('#challenges').html(h);
+//                $('#mychallenges').html(p);
+//                setTimeout('getChallenges()',2000); 
+//            }
+//     	});
+//     }
     function challengePlayer(button){
 //        console.log(button.id);
         MyXHR('post',{method:'challengePlayer',a:'challenge',data:button.id+"|4"}).done(function(json){
@@ -146,7 +204,7 @@
         });
     }
     function acceptChallenge(button){
-//          console.log(button.id);
+          console.log(button.id);
         MyXHR('post',{method:'acceptChallenge',a:'challenge',data:button.id}).done(function(json){
             console.log(json);
             if(json.loggedOut) {
@@ -163,7 +221,7 @@
     }
     function declineChallenge(button){
         MyXHR('post',{method:'declineChallenge',a:'challenge',data:button.id}).done(function(json){
-            console.log(json);
+//            console.log(json);
             if(json.loggedOut) {
             window.location.replace("login.html");
             } else {
@@ -179,6 +237,8 @@
 
         
     function getGames(){
+//                 console.log('getGames');
+
      	MyXHR('get',{method:'getGames',a:'challenge'}).done(function(json){
 //            console.log(json);
             if(json.loggedOut) {
@@ -189,11 +249,21 @@
 //                    if()
                     var turn ="";
                     if(json[i].turn == 0) {
-                        turn = json[i].player0_name;
+                        if(json[i].player_0 == getCookie('player_id')) {
+                           turn = "your"; 
+                        } else {
+                            turn = json[i].player0_name+ '\'s';
+                        }
                     } else {
-                        turn = json[i].player1_name;
+                        if(json[i].player_1 == getCookie('player_id')) {
+                           turn = "your"; 
+                        } else {
+                            turn = json[i].player1_name+ '\'s';
+                        }
+//                        turn = json[i].player1_name;
                     }
-                    h+=json[i].game_id+': '+json[i].player0_name+' vs '+json[i].player1_name+' \<span style="color:gray"> '+json[i].score_0+' to '+json[i].score_1+'</span><br/><span style="color:red">Its '+turn+'\'s Turn!</span><br/><a href="board.php?gameId='+json[i].game_id+'">Go To Game</a>';
+                  
+                    h+=json[i].game_id+': '+json[i].player0_name+' vs '+json[i].player1_name+' \<span style="color:gray"> '+json[i].score_0+' to '+json[i].score_1+'</span><br/><span style="color:red">Its '+turn+' Turn!</span><br/><a href="board.php?gameId='+json[i].game_id+'">Go To Game</a></br></br>';
                     
                     
 //                    <button type="button" id="game_'+json[i].game_id+'" onclick="goToGame()">Go To Game</button>';
@@ -234,7 +304,16 @@
     return "";
 }
     
-     
+//     window.onbeforeunload = function (event) {
+//    var message = 'Important: Please click on \'Save\' button to leave this page.';
+//    if (typeof event == 'undefined') {
+//        event = window.event;
+//    }
+//    if (event) {
+//        event.returnValue = message;
+//    }
+//    return message;
+//};
     </script>
       
       <style>
@@ -291,4 +370,13 @@
             </div>
 
   </body>
+<!--
+    <script language="JavaScript">
+  window.onbeforeunload = confirmExit;
+  function confirmExit()
+  {
+    return "You have attempted to leave this page.  If you have made any changes to the fields without clicking the Save button, your changes will be lost.  Are you sure you want to exit this page?";
+  }
+</script>
+-->
 </html>

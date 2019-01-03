@@ -2,7 +2,7 @@ var game={
     xhtmlns:"http://www.w3.org/1999/xhtml",
 	svgns:"http://www.w3.org/2000/svg",
 	BOARDX:75,				//starting pos of board
-	BOARDY:75,				//look above
+	BOARDY:100,				//look above
     boardArr:new Array(),	
 	dotArr:new Array(),		//2d array [row][col]
 	pieceArr:new Array(),		//2d array [player][piece] (player is either 0 or 1)
@@ -26,7 +26,7 @@ var game={
 		//var x = new Cell(document.getElementById('someIDsetByTheServer'),'cell_00',CELLSIZE,0,0);
         var rectEle=document.createElementNS(game.svgns,'rect');
 		rectEle.setAttributeNS(null,'x','50px');
-		rectEle.setAttributeNS(null,'y','50px');
+		rectEle.setAttributeNS(null,'y','75px');
 		rectEle.setAttributeNS(null,'width','500px');
 		rectEle.setAttributeNS(null,'height','500px');
         rectEle.setAttributeNS(null,'fill','white');
@@ -73,12 +73,33 @@ var game={
 //		console.log(turn);
 //        console.log(playerId);
 		//set the colors of whose turn it is
+        if(playerId == 0) {
+            document.getElementById('youPlayer').setAttributeNS(null,'class',"player0");
+            document.getElementById('youScore').setAttributeNS(null,'class',"player0");
+            document.getElementById('score0').setAttributeNS(null,'class',"player0");
+
+			document.getElementById('opponentPlayer').setAttributeNS(null,'class',"player1");
+            document.getElementById('oppScore').setAttributeNS(null,'class',"player1");
+            document.getElementById('score1').setAttributeNS(null,'class',"player1");
+
+        } else {
+            document.getElementById('youPlayer').setAttributeNS(null,'class',"player1");
+            document.getElementById('youScore').setAttributeNS(null,'class',"player1");
+            document.getElementById('score0').setAttributeNS(null,'class',"player1");
+            
+			document.getElementById('opponentPlayer').setAttributeNS(null,'class',"player0");
+            document.getElementById('oppScore').setAttributeNS(null,'class',"player0");
+            document.getElementById('score1').setAttributeNS(null,'class',"player0");
+
+        }
 		if(turn==playerId){
-			document.getElementById('youPlayer').setAttributeNS(null,'fill',"green");
-			document.getElementById('opponentPlayer').setAttributeNS(null,'fill',"black");
+//			document.getElementById('youPlayer').setAttributeNS(null,'fill',"green");
+//            document.getElementById('opponentPlayer').setAttributeNS(null,'fill',"black");
+            document.getElementById('youPlayRect').setAttributeNS(null,'fill',"black");
+            document.getElementById('oppPlayRect').setAttributeNS(null,'fill',"white");    
 		}else{
-			document.getElementById('youPlayer').setAttributeNS(null,'fill',"black");
-			document.getElementById('opponentPlayer').setAttributeNS(null,'fill',"green");
+			document.getElementById('youPlayRect').setAttributeNS(null,'fill',"white");
+			document.getElementById('oppPlayRect').setAttributeNS(null,'fill',"black");
 		}
 	
 		///////////////////////////////////
@@ -103,8 +124,16 @@ var drag={
 		drag.mover = which;
         
         var dot = util.getDot(which);
+        console.log("DOT x" +dot.cx);
+        console.log("DOT y" +dot.cy);
+                console.log("DOT CX" +dot.getCenterX());
+                console.log("DOT CY" +dot.getCenterY());
+
+
         myX = dot.getCenterX();
         myY  = dot.getCenterY();
+        console.log("MY X "+myX);
+        console.log("MY Y "+myY);
         
 	},
     drawLine:function(evt){		
@@ -112,12 +141,17 @@ var drag={
             if(document.getElementById("lineDraw")) {
                 drag.removeLine()
             }
+            console.log("EVENT: "+evt.layerX);
+//            console.log("EVENT: "+evt.layerY);
+
 //            game.pieceArr[]
             /*FIGURE OUT HOW TO DO IT THROUGH THE DOT PROTOTYPE*/
             var line = document.createElementNS(game.svgns,"line");
 	        line.setAttributeNS(null,"x1",myX);
             line.setAttributeNS(null,"y1",myY);
-	        line.setAttributeNS(null,"x2",evt.layerX);
+//	        line.setAttributeNS(null,"x2",evt.layerX-12);
+            line.setAttributeNS(null,"x2",evt.layerX);
+
 	        line.setAttributeNS(null,"y2",evt.layerY);
             line.setAttributeNS(null, "style", "stroke:rgb(200,0,0);stroke-width:2");
             line.setAttributeNS(null, "id", "lineDraw");

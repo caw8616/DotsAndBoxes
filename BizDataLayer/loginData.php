@@ -54,6 +54,25 @@
             return $e;
         }
     }
+  function changeRoomData($id, $room) {
+        global $conn; //I have to pull in the defined variable 
+        try{
+            $stmt = $conn->prepare("UPDATE players SET room=? WHERE player_id=?");
+            $stmt->bind_param('ii', $room,$id);
+            
+            $stmt->execute();
+
+            if($stmt ->affected_rows == 1) {
+                return true;
+            } else {
+                return false;
+            }
+            $stmt->close();
+            $conn->close();
+        } catch(Exception $e){
+            return $e;
+        }
+    }
 
     function logoutData($id) {
         global $conn; //I have to pull in the defined variable 

@@ -679,3 +679,1283 @@ Exception caught @20:24:33 12.14.18
     Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(231): getGamesData(20)
 #1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
 #2 {main}
+Exception caught @19:45:40 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and active= 1
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 156
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(208): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @19:53:15 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and active= 1
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 156
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(208): getGamesData(35)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:02:21 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenged = players.player_id WHERE challenger = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 55
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(50): getChallengesData(35)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenges(NULL)
+#2 {main}
+Exception caught @20:02:23 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenged = players.player_id WHERE challenger = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 55
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(50): getChallengesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenges(NULL)
+#2 {main}
+Exception caught @20:06:41 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenged = players.player_id WHERE challenger = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 55
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(50): getChallengesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenges(NULL)
+#2 {main}
+Exception caught @20:06:41 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenger = players.player_id WHERE challenged = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 73
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(74): getChallengedData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenged(NULL)
+#2 {main}
+Exception caught @20:06:41 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and active= 1
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 191
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:07:49 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenged = players.player_id WHERE challenger = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 55
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(50): getChallengesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenges(NULL)
+#2 {main}
+Exception caught @20:07:49 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenger = players.player_id WHERE challenged = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 73
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(74): getChallengedData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenged(NULL)
+#2 {main}
+Exception caught @20:07:49 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and active= 1
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 191
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:07:49 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenged = players.player_id WHERE challenger = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 55
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(50): getChallengesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenges(NULL)
+#2 {main}
+Exception caught @20:07:49 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenger = players.player_id WHERE challenged = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 73
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(74): getChallengedData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenged(NULL)
+#2 {main}
+Exception caught @20:07:49 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and active= 1
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 191
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:07:50 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenged = players.player_id WHERE challenger = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 55
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(50): getChallengesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenges(NULL)
+#2 {main}
+Exception caught @20:07:50 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenger = players.player_id WHERE challenged = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 73
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(74): getChallengedData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenged(NULL)
+#2 {main}
+Exception caught @20:07:50 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and active= 1
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 191
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:07:50 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenged = players.player_id WHERE challenger = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 55
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(50): getChallengesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenges(NULL)
+#2 {main}
+Exception caught @20:07:50 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenger = players.player_id WHERE challenged = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 73
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(74): getChallengedData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenged(NULL)
+#2 {main}
+Exception caught @20:07:50 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and active= 1
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 191
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:07:50 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenger = players.player_id WHERE challenged = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 73
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(74): getChallengedData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenged(NULL)
+#2 {main}
+Exception caught @20:07:50 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenged = players.player_id WHERE challenger = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 55
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(50): getChallengesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenges(NULL)
+#2 {main}
+Exception caught @20:07:50 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and active= 1
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 191
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:07:51 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenged = players.player_id WHERE challenger = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 55
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(50): getChallengesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenges(NULL)
+#2 {main}
+Exception caught @20:07:51 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and active= 1
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 191
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:07:51 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenger = players.player_id WHERE challenged = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 73
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(74): getChallengedData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenged(NULL)
+#2 {main}
+Exception caught @20:07:51 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenged = players.player_id WHERE challenger = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 55
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(50): getChallengesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenges(NULL)
+#2 {main}
+Exception caught @20:07:51 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenger = players.player_id WHERE challenged = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 73
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(74): getChallengedData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenged(NULL)
+#2 {main}
+Exception caught @20:07:51 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and active= 1
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 191
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:07:51 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenger = players.player_id WHERE challenged = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 73
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(74): getChallengedData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenged(NULL)
+#2 {main}
+Exception caught @20:07:51 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenged = players.player_id WHERE challenger = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 55
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(50): getChallengesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenges(NULL)
+#2 {main}
+Exception caught @20:07:51 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and active= 1
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 191
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:08:51 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenged = players.player_id WHERE challenger = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 55
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(50): getChallengesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenges(NULL)
+#2 {main}
+Exception caught @20:08:51 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and active= 1
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 191
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:08:51 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenger = players.player_id WHERE challenged = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 73
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(74): getChallengedData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenged(NULL)
+#2 {main}
+Exception caught @20:08:51 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenged = players.player_id WHERE challenger = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 55
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(50): getChallengesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenges(NULL)
+#2 {main}
+Exception caught @20:08:51 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenger = players.player_id WHERE challenged = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 73
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(74): getChallengedData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenged(NULL)
+#2 {main}
+Exception caught @20:08:51 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and active= 1
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 191
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:08:51 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenged = players.player_id WHERE challenger = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 55
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(50): getChallengesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenges(NULL)
+#2 {main}
+Exception caught @20:08:51 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and active= 1
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 191
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:08:51 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenger = players.player_id WHERE challenged = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 73
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(74): getChallengedData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenged(NULL)
+#2 {main}
+Exception caught @20:08:52 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenger = players.player_id WHERE challenged = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 73
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(74): getChallengedData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenged(NULL)
+#2 {main}
+Exception caught @20:08:52 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenged = players.player_id WHERE challenger = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 55
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(50): getChallengesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenges(NULL)
+#2 {main}
+Exception caught @20:08:52 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and active= 1
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 191
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:09:43 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenged = players.player_id WHERE challenger = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 55
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(50): getChallengesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenges(NULL)
+#2 {main}
+Exception caught @20:09:43 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenger = players.player_id WHERE challenged = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 73
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(74): getChallengedData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenged(NULL)
+#2 {main}
+Exception caught @20:09:43 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and active= 1
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 191
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:09:43 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenged = players.player_id WHERE challenger = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 55
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(50): getChallengesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenges(NULL)
+#2 {main}
+Exception caught @20:09:43 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenger = players.player_id WHERE challenged = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 73
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(74): getChallengedData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenged(NULL)
+#2 {main}
+Exception caught @20:09:43 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and active= 1
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 191
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:09:44 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenged = players.player_id WHERE challenger = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 55
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(50): getChallengesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenges(NULL)
+#2 {main}
+Exception caught @20:09:44 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenger = players.player_id WHERE challenged = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 73
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(74): getChallengedData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenged(NULL)
+#2 {main}
+Exception caught @20:09:44 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and active= 1
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 191
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:11:05 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenged = players.player_id WHERE challenger = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 55
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(50): getChallengesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenges(NULL)
+#2 {main}
+Exception caught @20:11:05 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and active= 1
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 191
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:11:05 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenger = players.player_id WHERE challenged = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 73
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(74): getChallengedData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenged(NULL)
+#2 {main}
+Exception caught @20:11:05 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenged = players.player_id WHERE challenger = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 55
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(50): getChallengesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenges(NULL)
+#2 {main}
+Exception caught @20:11:05 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenger = players.player_id WHERE challenged = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 73
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(74): getChallengedData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenged(NULL)
+#2 {main}
+Exception caught @20:11:05 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and active= 1
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 191
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:12:13 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenged = players.player_id WHERE challenger = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 55
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(50): getChallengesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenges(NULL)
+#2 {main}
+Exception caught @20:12:13 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenger = players.player_id WHERE challenged = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 73
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(74): getChallengedData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenged(NULL)
+#2 {main}
+Exception caught @20:12:13 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and active= 1
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 191
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:12:13 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenger = players.player_id WHERE challenged = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 73
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(74): getChallengedData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenged(NULL)
+#2 {main}
+Exception caught @20:12:13 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenged = players.player_id WHERE challenger = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 55
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(50): getChallengesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenges(NULL)
+#2 {main}
+Exception caught @20:12:13 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and active= 1
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 191
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:12:13 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenged = players.player_id WHERE challenger = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 55
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(50): getChallengesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenges(NULL)
+#2 {main}
+Exception caught @20:12:13 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and active= 1
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 191
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:12:13 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenger = players.player_id WHERE challenged = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 73
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(74): getChallengedData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenged(NULL)
+#2 {main}
+Exception caught @20:12:13 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenged = players.player_id WHERE challenger = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 55
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(50): getChallengesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenges(NULL)
+#2 {main}
+Exception caught @20:12:13 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and active= 1
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 191
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:12:13 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenger = players.player_id WHERE challenged = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 73
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(74): getChallengedData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenged(NULL)
+#2 {main}
+Exception caught @20:12:13 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenged = players.player_id WHERE challenger = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 55
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(50): getChallengesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenges(NULL)
+#2 {main}
+Exception caught @20:12:13 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenger = players.player_id WHERE challenged = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 73
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(74): getChallengedData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenged(NULL)
+#2 {main}
+Exception caught @20:12:13 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and active= 1
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 191
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:12:14 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenged = players.player_id WHERE challenger = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 55
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(50): getChallengesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenges(NULL)
+#2 {main}
+Exception caught @20:12:14 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenger = players.player_id WHERE challenged = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 73
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(74): getChallengedData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenged(NULL)
+#2 {main}
+Exception caught @20:12:14 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and active= 1
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 191
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:12:14 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenged = players.player_id WHERE challenger = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 55
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(50): getChallengesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenges(NULL)
+#2 {main}
+Exception caught @20:12:14 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenger = players.player_id WHERE challenged = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 73
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(74): getChallengedData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenged(NULL)
+#2 {main}
+Exception caught @20:12:14 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and active= 1
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 191
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:12:14 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenged = players.player_id WHERE challenger = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 55
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(50): getChallengesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenges(NULL)
+#2 {main}
+Exception caught @20:12:14 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and active= 1
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 191
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:12:14 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenger = players.player_id WHERE challenged = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 73
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(74): getChallengedData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenged(NULL)
+#2 {main}
+Exception caught @20:12:14 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenged = players.player_id WHERE challenger = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 55
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(50): getChallengesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenges(NULL)
+#2 {main}
+Exception caught @20:12:14 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenger = players.player_id WHERE challenged = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 73
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(74): getChallengedData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenged(NULL)
+#2 {main}
+Exception caught @20:12:14 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and active= 1
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 191
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:12:26 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenged = players.player_id WHERE challenger = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 55
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(50): getChallengesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenges(NULL)
+#2 {main}
+Exception caught @20:12:26 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenger = players.player_id WHERE challenged = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 73
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(74): getChallengedData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenged(NULL)
+#2 {main}
+Exception caught @20:12:26 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and active= 1
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 191
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:12:32 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenged = players.player_id WHERE challenger = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 55
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(50): getChallengesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenges(NULL)
+#2 {main}
+Exception caught @20:12:32 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenger = players.player_id WHERE challenged = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 73
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(74): getChallengedData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenged(NULL)
+#2 {main}
+Exception caught @20:12:32 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and active= 1
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 191
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:12:44 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenged = players.player_id WHERE challenger = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 55
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(50): getChallengesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenges(NULL)
+#2 {main}
+Exception caught @20:12:44 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and active= 1
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 191
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:12:44 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenger = players.player_id WHERE challenged = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 73
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(74): getChallengedData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenged(NULL)
+#2 {main}
+Exception caught @20:12:44 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenged = players.player_id WHERE challenger = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 55
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(50): getChallengesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenges(NULL)
+#2 {main}
+Exception caught @20:12:44 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and active= 1
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 191
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:12:44 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenger = players.player_id WHERE challenged = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 73
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(74): getChallengedData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenged(NULL)
+#2 {main}
+Exception caught @20:12:45 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenger = players.player_id WHERE challenged = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 73
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(74): getChallengedData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenged(NULL)
+#2 {main}
+Exception caught @20:12:45 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenged = players.player_id WHERE challenger = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 55
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(50): getChallengesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenges(NULL)
+#2 {main}
+Exception caught @20:12:45 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and active= 1
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 191
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:12:45 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenged = players.player_id WHERE challenger = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 55
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(50): getChallengesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenges(NULL)
+#2 {main}
+Exception caught @20:12:45 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenger = players.player_id WHERE challenged = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 73
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(74): getChallengedData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenged(NULL)
+#2 {main}
+Exception caught @20:12:45 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and active= 1
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 191
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:12:45 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenged = players.player_id WHERE challenger = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 55
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(50): getChallengesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenges(NULL)
+#2 {main}
+Exception caught @20:12:45 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenger = players.player_id WHERE challenged = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 73
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(74): getChallengedData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenged(NULL)
+#2 {main}
+Exception caught @20:12:45 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and active= 1
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 191
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:12:45 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and active= 1
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 191
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:12:45 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenger = players.player_id WHERE challenged = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 73
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(74): getChallengedData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenged(NULL)
+#2 {main}
+Exception caught @20:12:45 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenged = players.player_id WHERE challenger = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 55
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(50): getChallengesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenges(NULL)
+#2 {main}
+Exception caught @20:12:46 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenged = players.player_id WHERE challenger = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 55
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(50): getChallengesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenges(NULL)
+#2 {main}
+Exception caught @20:12:46 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenger = players.player_id WHERE challenged = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 73
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(74): getChallengedData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenged(NULL)
+#2 {main}
+Exception caught @20:12:46 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and active= 1
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 191
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:12:46 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenged = players.player_id WHERE challenger = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 55
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(50): getChallengesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenges(NULL)
+#2 {main}
+Exception caught @20:12:46 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenger = players.player_id WHERE challenged = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 73
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(74): getChallengedData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenged(NULL)
+#2 {main}
+Exception caught @20:12:46 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and active= 1
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 191
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:12:47 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenged = players.player_id WHERE challenger = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 55
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(50): getChallengesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenges(NULL)
+#2 {main}
+Exception caught @20:12:47 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and active= 1
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 191
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:12:47 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenger = players.player_id WHERE challenged = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 73
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(74): getChallengedData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenged(NULL)
+#2 {main}
+Exception caught @20:12:48 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and active= 1
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 191
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:12:48 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenger = players.player_id WHERE challenged = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 73
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(74): getChallengedData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenged(NULL)
+#2 {main}
+Exception caught @20:12:48 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenged = players.player_id WHERE challenger = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 55
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(50): getChallengesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenges(NULL)
+#2 {main}
+Exception caught @20:12:54 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenged = players.player_id WHERE challenger = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 55
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(50): getChallengesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenges(NULL)
+#2 {main}
+Exception caught @20:12:54 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenger = players.player_id WHERE challenged = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 73
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(74): getChallengedData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenged(NULL)
+#2 {main}
+Exception caught @20:12:54 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and active= 1
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 191
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:13:26 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenger = players.player_id WHERE challenged = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 73
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(74): getChallengedData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenged(NULL)
+#2 {main}
+Exception caught @20:13:26 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenged = players.player_id WHERE challenger = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 55
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(50): getChallengesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenges(NULL)
+#2 {main}
+Exception caught @20:13:26 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and active= 1
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 191
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:13:27 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenged = players.player_id WHERE challenger = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 55
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(50): getChallengesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenges(NULL)
+#2 {main}
+Exception caught @20:13:27 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenger = players.player_id WHERE challenged = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 73
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(74): getChallengedData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenged(NULL)
+#2 {main}
+Exception caught @20:13:27 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and active= 1
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 191
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:13:27 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenged = players.player_id WHERE challenger = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 55
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(50): getChallengesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenges(NULL)
+#2 {main}
+Exception caught @20:13:27 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and active= 1
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 191
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:13:27 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT challenge_id, timestamp, challenger, challenged, first_name, last_name, online, room, board_size, status, username FROM challenges JOIN players on challenges.challenger = players.player_id WHERE challenged = ? and status = created ORDER BY timestamp
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 73
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(74): getChallengedData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getChallenged(NULL)
+#2 {main}
+Exception caught @20:21:19 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and active= 1
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 191
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:22:19 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and active= 1
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 192
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:22:39 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and active= 1
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 192
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:22:47 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and active= 1
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 192
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:23:00 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and active= 1
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 192
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(35)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:23:25 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and active= 1
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 192
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:23:32 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and active= 1
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 192
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:23:33 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and active= 1
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 192
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:23:39 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and active= 1
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 192
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:24:01 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and active= 1
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 192
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:25:26 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and active= 1
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 192
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:26:57 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and active= 1
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 192
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:29:50 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and status= 'created'
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 192
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:29:53 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and status= 'created'
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 192
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:29:53 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and status= 'created'
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 192
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:30:21 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and status= 'created'
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 192
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:30:22 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and status= 'created'
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 192
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:30:25 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and status= 'created'
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 192
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:31:05 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and state= 'created'
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 192
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:31:05 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and state= 'created'
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 192
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:31:05 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and state= 'created'
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 192
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:31:06 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and state= 'created'
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 192
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:31:06 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and state= 'created'
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 192
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:31:06 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and state= 'created'
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 192
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:31:06 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and state= 'created'
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 192
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:31:07 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and state= 'created'
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 192
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}
+Exception caught @20:31:07 12.31.18
+    Message: an error occured in the db hookup
+    SQL: SELECT * FROM game where player_0 = ? and active= 1 UNION SELECT * FROM game where player_1 = ? and state= 'created'
+    File: /Applications/MAMP/htdocs/secure/dotsandboxes/BizDataLayer/gameData.php
+    Line: 192
+    Trace: #0 /Applications/MAMP/htdocs/secure/dotsandboxes/svcLayer/challenge/challengeUtil.php(232): getGamesData(36)
+#1 /Applications/MAMP/htdocs/secure/dotsandboxes/mid.php(12): getGames(NULL)
+#2 {main}

@@ -18,6 +18,65 @@ require_once("../../dbInfoPS.inc");
 function startData($gameId){
     
 	global $conn;
+//    $sql = "UPDATE game SET moves_0=null, moves_1=null, turn=0, num_moves=0, score_0=0, score_1=0, winner=-1 WHERE game_id=?";
+//	try{
+//		if($stmt=$conn->prepare($sql)){
+//			$stmt->bind_param("i",$gameId);
+//			$stmt->execute();
+//			$stmt->close();
+//		}else{
+//        	throw new Exception("An error occurred while setting up data");
+//        }
+//	}catch (Exception $e) {
+//        log_error($e, $sql, null);
+//		return false;
+//    }
+	//get the init of the game
+	$sql = "SELECT * FROM game WHERE game_id=?";
+	try{
+		if($stmt=$conn->prepare($sql)){
+			//bind parameters for the markers (s - string, i - int, d - double, b - blob)
+			$stmt->bind_param("i",$gameId);
+			$data=returnJson($stmt);
+            $stmt->close();
+//            $conn->close();
+            if(json_decode($data, true)[0]['state'] == 'created') {
+                updateToStarted($gameId);
+            } else {
+               $conn->close(); 
+            }
+            
+			return $data;
+		}else{
+            throw new Exception("An error occurred while fetching record data");
+        }
+	}catch (Exception $e) {
+        log_error($e, $sql, null);
+		return false;
+    }
+//    $conn->close();
+}
+
+function updateToStarted($gameId) {
+    global $conn;
+    $sql = "UPDATE game SET state='started' WHERE game_id=?";
+	try{
+		if($stmt=$conn->prepare($sql)){
+			$stmt->bind_param("i",$gameId);
+			$stmt->execute();
+//			$stmt->close();
+            $conn->close();
+		}else{
+        	throw new Exception("An error occurred while setting up data");
+        }
+	}catch (Exception $e) {
+        log_error($e, $sql, null);
+		return false;
+    }
+}
+
+function restartData($gameId) {
+    global $conn;
     $sql = "UPDATE game SET moves_0=null, moves_1=null, turn=0, num_moves=0, score_0=0, score_1=0, winner=-1 WHERE game_id=?";
 	try{
 		if($stmt=$conn->prepare($sql)){
@@ -31,24 +90,6 @@ function startData($gameId){
         log_error($e, $sql, null);
 		return false;
     }
-	//get the init of the game
-	$sql = "SELECT * FROM game WHERE game_id=?";
-	try{
-		if($stmt=$conn->prepare($sql)){
-			//bind parameters for the markers (s - string, i - int, d - double, b - blob)
-			$stmt->bind_param("i",$gameId);
-			$data=returnJson($stmt);
-//			$stmt->close();
-            $conn->close();
-			return $data;
-		}else{
-            throw new Exception("An error occurred while fetching record data");
-        }
-	}catch (Exception $e) {
-        log_error($e, $sql, null);
-		return false;
-    }
-//    $conn->close();
 }
 /*************************
 	checkTurnData
@@ -127,6 +168,7 @@ function changeTurnData($gameId){
     }
 	$conn->close();
 }
+
  function clearMovesData($gameId,$playerId){
 	//update the board
 	global $conn;
@@ -189,7 +231,7 @@ function addWinnerData($gameId, $id){
     //set winner to id number (OR MAYBE 0 or 1)
 	//active=0
     global $conn;
-	$sql="UPDATE game SET active=0, winner=? WHERE game_id=?";
+	$sql="UPDATE game SET state='completed', winner=? WHERE game_id=?";
 	try{
 		if($stmt=$conn->prepare($sql)){
 			$stmt->bind_param("ii", $id,$gameId);

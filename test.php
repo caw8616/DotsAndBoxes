@@ -1,22 +1,22 @@
 
 <?php
 require "../../dbInfoPS.inc";
-
 function startData($gameId){
+    
 	global $conn;
-    $sql = "UPDATE game SET moves_0=null, moves_1=null, turn=0, num_moves=0, score_0=0, score_1=0, winner=-1 WHERE game_id=?";
-	try{
-		if($stmt=$conn->prepare($sql)){
-			$stmt->bind_param("i",$gameId);
-			$stmt->execute();
-			$stmt->close();
-		}else{
-        	throw new Exception("An error occurred while setting up data");
-        }
-	}catch (Exception $e) {
-        log_error($e, $sql, null);
-		return false;
-    }
+//    $sql = "UPDATE game SET moves_0=null, moves_1=null, turn=0, num_moves=0, score_0=0, score_1=0, winner=-1 WHERE game_id=?";
+//	try{
+//		if($stmt=$conn->prepare($sql)){
+//			$stmt->bind_param("i",$gameId);
+//			$stmt->execute();
+//			$stmt->close();
+//		}else{
+//        	throw new Exception("An error occurred while setting up data");
+//        }
+//	}catch (Exception $e) {
+//        log_error($e, $sql, null);
+//		return false;
+//    }
 	//get the init of the game
 	$sql = "SELECT * FROM game WHERE game_id=?";
 	try{
@@ -25,6 +25,10 @@ function startData($gameId){
 			$stmt->bind_param("i",$gameId);
 			$data=returnJson($stmt);
 			$stmt->close();
+//            $conn->close();
+            if(json_decode($data, true)[0]['state']) {
+                updateToStarted($gameId);
+            }
 			return $data;
 		}else{
             throw new Exception("An error occurred while fetching record data");
@@ -33,10 +37,25 @@ function startData($gameId){
         log_error($e, $sql, null);
 		return false;
     }
-    $conn->close();
+//    $conn->close();
 }
-
-
+function updateToStarted($gameId) {
+    global $conn;
+    $sql = "UPDATE game SET state='started' WHERE game_id=?";
+	try{
+		if($stmt=$conn->prepare($sql)){
+			$stmt->bind_param("i",$gameId);
+			$stmt->execute();
+			$stmt->close();
+            $conn->close();
+		}else{
+        	throw new Exception("An error occurred while setting up data");
+        }
+	}catch (Exception $e) {
+        log_error($e, $sql, null);
+		return false;
+    }
+}
 function returnJson ($stmt){
 	$stmt->execute();
 	$stmt->store_result();
@@ -61,13 +80,12 @@ function returnJson ($stmt){
 	header("Cache-Control: no-store, no-cache, must-revalidate");
 	header("Cache-Control: post-check=0, pre-check=0", false);
 	header("Pragma: no-cache");
+	//MUST change the content-type
 	header("Content-Type:text/plain");
+	// This will become the response value for the XMLHttpRequest object
     return json_encode($data);
 }
 
+echo startData(19);
 
-//changeBoard('16~dot_0|2,dot_1|2~0');
-echo startData(16);
-//changeBoardData(16, 'dot_0|2,dot_1|2&', 0, 7);
-//echo getMoveData(16);
 ?>

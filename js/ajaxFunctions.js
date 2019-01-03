@@ -41,6 +41,62 @@ var ajax = {
 			}
             
 			game.init();
+//            console.log("OPPONENT "+jsonObj[0]['moves_'+oppId]);
+//            console.log("MINE "+jsonObj[0]['moves_'+playerId]);
+//
+//            var opponentMoves = [];
+//            var myMoves = [];
+//             if(jsonObj[0]['moves_'+oppId]) {
+//                opponentMoves = jsonObj[0]['moves_'+oppId].split("&");
+//            }
+//            if(jsonObj[0]['moves_'+playerId]) {
+//                myMoves = jsonObj[0]['moves_'+playerId].split("&");
+//            }
+//            var numMoves = 0
+//            if(myMoves.length > opponentMoves.length) {
+//                numMoves = myMoves.length;
+//            } else {
+//                numMoves = opponentMoves.length;
+//            }
+//            if(playerId == 0) {
+//                for(var i=0; i<numMoves-1; i++) {
+//                    var mMoves = myMoves[i].split(",");
+//                    console.log("My"+i+" "+mMoves);
+//                    rules.updateMyBoard(mMoves[0], mMoves[1]);
+//                    
+//                    var oppMoves = opponentMoves[i].split(",");
+//                    console.log("Opp"+i+" "+oppMoves);
+//                    rules.updateBoard(oppMoves[0], oppMoves[1]);
+//                }
+//            } else {
+//                for(var i=0; i<numMoves-1; i++) {
+//                    
+//                    var oppMoves = opponentMoves[i].split(",");
+//                    console.log("Opp"+i+" "+oppMoves);
+//                    rules.updateBoard(oppMoves[0], oppMoves[1]);
+//                    
+//                    var mMoves = myMoves[i].split(",");
+//                    console.log("My"+i+" "+mMoves);
+//                    rules.updateMyBoard(mMoves[0], mMoves[1]);
+//                }
+//            }
+//            
+            
+            if(jsonObj[0]['moves_'+oppId]) {
+                opponentMoves = jsonObj[0]['moves_'+oppId].split("&");
+                    var sets = jsonObj[0]['moves_'+oppId].split("&");
+                    for(var i=0; i<sets.length-1; i++) {
+                        var moves = sets[i].split(",");
+                        rules.updateBoard(moves[0], moves[1]);
+                    }
+            }
+             if(jsonObj[0]['moves_'+playerId]) {
+                    var mysets = jsonObj[0]['moves_'+playerId].split("&");
+                    for(var i=0; i<mysets.length-1; i++) {
+                        var moves = mysets[i].split(",");
+                        rules.updateMyBoard(moves[0], moves[1]);
+                    }
+                }
      	});
         
 	},
@@ -54,9 +110,10 @@ var ajax = {
 
 //		ajax.ajaxCall("POST", {method: whatMethod, a: "game", data: val});
 		//change the color of the names to be the other guys turn
-		document.getElementById('youPlayer').setAttributeNS(null,'fill',"black");
-        document.getElementById('opponentPlayer').setAttributeNS(null,'fill',"green");
-		
+//		document.getElementById('youPlayer').setAttributeNS(null,'fill',"black");
+//        document.getElementById('opponentPlayer').setAttributeNS(null,'fill',"green");
+		document.getElementById('youPlayRect').setAttributeNS(null,'fill',"white");
+        document.getElementById('oppPlayRect').setAttributeNS(null,'fill',"black");  
 	},
 	
 	////changeBoardAjax/////
@@ -87,9 +144,10 @@ var ajax = {
                     if(turn != jsonObj[0].turn) {
                         
 					   turn=jsonObj[0].turn;
-                        document.getElementById('youPlayer').setAttributeNS(null,'fill',"green");
-                        document.getElementById('opponentPlayer').setAttributeNS(null,'fill',"black");
-		
+//                        document.getElementById('youPlayer').setAttributeNS(null,'fill',"green");
+//                        document.getElementById('opponentPlayer').setAttributeNS(null,'fill',"black");
+		              document.getElementById('youPlayRect').setAttributeNS(null,'fill',"black");
+                    document.getElementById('oppPlayRect').setAttributeNS(null,'fill',"white");  
 					   ajax.getMoveAjax('getMove',gameId);
 //                        ajax.clearOpponentMovesAjax('clearMoves', gameId);
                         
@@ -112,6 +170,20 @@ var ajax = {
 //                console.log("GET MOVE");
 
 //                console.log(json);
+//                if(playerId == 0) {
+//                    game.p0_score = json[0]['score_0']; 
+//                     document.getElementById('score0').firstChild.data=game.p0_score;
+//                    game.p1_score = json[0]['score_1'];
+//                     document.getElementById('score1').firstChild.data=game.p1_score;
+//                 } else {
+//                    game.p1_score = json[0]['score_1']; 
+//                    game.p0_score = json[0]['score_1'];
+//                    document.getElementById('score0').firstChild.data=game.p0_score;
+//                     document.getElementById('score1').firstChild.data=game.p1_score;
+//                }
+//                       
+          
+                
                 if(json[0]['moves_'+oppId]) {
                     var sets = json[0]['moves_'+oppId].split("&");
                     for(var i=0; i<sets.length-1; i++) {

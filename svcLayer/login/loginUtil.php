@@ -279,5 +279,33 @@ function createPlayer($myData) {
         return returnJsonEncode($data);
     }
 
+     function setRoom($myData){
+
+        $data = array();
+        
+        if ( isset($_SESSION['LAST_ACTIVITY']) && ((time() - $_SESSION['LAST_ACTIVITY']) > 1800)) {
+            logoutPlayer($_SESSION['player_id']);
+            session_unset();     
+            session_destroy();
+            setcookie ("player_id", "", time() - 3600);
+            setcookie ("username", "", time() - 3600);
+            setcookie ("room", "", time() - 3600);
+            unset($_COOKIE['username']);
+            unset($_COOKIE['room']);
+            $data['loggedOut'] = 'Session Expired';
+            return returnJsonEncode($data);
+        } else {
+            if ($_SESSION['loggedIn'] == 0) {
+                $data['loggedOut'] = 'No user logged in';
+                return returnJsonEncode($data);            
+            } else {
+                $_SESSION['room'] = $myData;
+                setcookie('room', $myData, time()+3600);
+               return changeRoomData($_SESSION['player_id'], $myData);
+            }
+        }
+         
+
+	}	
 ?>
 

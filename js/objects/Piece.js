@@ -28,13 +28,11 @@ function Piece(board,player, orientation, dot_1,dot_2,type){
         this.id = "pieceh_"+dot_1.row+ "|" +dot_1.col+ "|"+dot_2.col;
     } else {
         this.id = "piecev_"+dot_1.col+ "|" +dot_1.row+ "|"+dot_2.row;
-
     }
 	this.x1=this.dot_1.getCenterX();		// the piece needs to know what its x location value is.
 	this.y1=this.dot_1.getCenterY();		
     this.x2=this.dot_2.getCenterX();		// the piece needs to know what its x location value is.
 	this.y2=this.dot_2.getCenterY();	// the piece needs to know what its y location value is as well.
-
 	this.object=new window[type](this);			// based on the piece type, you need to create the more specific piece object 
 	this.piece = this.object.piece;					// a shortcut to the actual svg piece object
 	this.setAtt("id",this.id);						// make sure the SVG object has the correct id value (make sure it can be 

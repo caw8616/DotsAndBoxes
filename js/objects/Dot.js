@@ -54,7 +54,7 @@ Dot.prototype={
 	},
 	//get CenterY
 	getCenterY:function(){
-		return (game.BOARDX+this.cy);
+		return (game.BOARDY+this.cy);
 	},
     getRow: function(){
         return this.row;

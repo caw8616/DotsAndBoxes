@@ -32,6 +32,7 @@ var rules={
         rules.clearVars();
 		x=x-game.BOARDX;
 		y=y-game.BOARDY;	
+
         var firstDot = util.getDot(id);
         var firstRow  = firstDot.getRow();
         var firstCol  = firstDot.getCol();
@@ -155,7 +156,40 @@ var rules={
  
 		return false;
 	},
-
+    updateMyBoard:function(id_1,id_2){
+        rules.clearVars();
+        
+        var firstDot = util.getDot(id_1);
+        var newDot = util.getDot(id_2);
+        
+        if(firstDot.getRow() == newDot.getRow()) {
+            this.orientation = "h";
+        } else {
+            this.orientation = "v";
+        }
+//            game.horizLines[this.row_1][this.col_1+"|"+this.col_2]
+        var dots = util.orderDots(firstDot, newDot);
+        rules.setDots(dots[0], dots[1]);
+        if (!rules.checkOccupied()) {
+            this.playId = playerId;
+            rules.successfulDrop();
+            if(rules.checkForSquare()) {
+                if(rules.checkForWin()) {
+                    var winner = rules.checkForWinner();
+                    if(winner == playerId) {
+                        document.getElementById("result").firstChild.data="GAME OVER! YOU WON! :)";
+                    } else if(winner == oppId) {
+                        document.getElementById("result").firstChild.data="GAME OVER! YOU LOST! :(";
+                    } else {
+                        document.getElementById("result").firstChild.data="GAME OVER! YOU TIED! :/";
+                    }
+                }
+            } 
+            return true;
+        }
+ 
+		return false;
+	},
     setDots(first, second) {
         this.dot_1 = first;
         this.row_1 = first.getRow();

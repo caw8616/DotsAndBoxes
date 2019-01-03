@@ -35,7 +35,7 @@
                 signupButton.classList.remove("active");
             }
             loginButton.classList.add("active");
-        document.getElementById('choice_content').innerHTML = "<div class='form'><form name='login' id='loginForm'><label for='username'>Username: </label><input type='text'  name='username' id='username' value='user1'><br><br><label for='password'>Password: </label><input type='password' name='password' id='password' value='password'><br><br><input type='submit' value='Submit'/></form></div>";
+        document.getElementById('choice_content').innerHTML = "<div class='form'><form name='login' id='loginForm'><label for='username'>Username: </label><input type='text'  name='username' id='username'><br><br><label for='password'>Password: </label><input type='password' name='password' id='password'><br><br><input type='submit' value='Submit'/></form></div>";
         }
 		document.getElementById("loginForm").addEventListener('submit',function(event) {
             event.preventDefault();
@@ -54,7 +54,7 @@
                 loginButton.classList.remove("active");
             }
             signupButton.classList.add("active");
-            document.getElementById('choice_content').innerHTML = "<div class='form'><form name='signup' id='signupForm'><label for='first_name'>First Name: </label><input type='text' id='first_name' name='first_name' value='MyFirst'><br><br><label for='last_name'>Last Name: </label><input type='text' id='last_name' name='last_name' value='MyLast'><br><br><label for='username'>Username: </label><input type='text' id='username' name='username' value='MyUser'><br><br><label for='password'>Password: </label><input type='password' id='password' name='password' value='MyPassword'><br><br><input type='submit' value='Submit'/></form></div>";
+            document.getElementById('choice_content').innerHTML = "<div class='form'><form name='signup' id='signupForm'><label for='first_name'>First Name: </label><input type='text' id='first_name' name='first_name'><br><br><label for='last_name'>Last Name: </label><input type='text' id='last_name' name='last_name'><br><br><label for='username'>Username: </label><input type='text' id='username' name='username' ><br><br><label for='password'>Password: </label><input type='password' id='password' name='password'><br><br><input type='submit' value='Submit'/></form></div>";
         }
 		document.getElementById("signupForm").addEventListener('submit',function(event) {
             event.preventDefault();

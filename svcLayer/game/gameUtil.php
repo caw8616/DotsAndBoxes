@@ -2,7 +2,7 @@
 
     require_once('BizDataLayer/gameBizData.php');
 
-  session_name("playerSession");
+    session_name("playerSession");
     session_start();
 
 /*************************
@@ -12,22 +12,22 @@
 	returns:	gameInfo
 				[{"game_id":38,"whoseTurn":1,"player0_name":"Dan","player0_pieceID":null,"player0_boardI":null,"player0_boardJ":null,"player1_name":"Fred","player1_pieceID":null,"player1_boardI":null,"player1_boardJ":null,"last_updated":"0000-00-00 00:00:00"}]
 */
-function start($d){
-	//Should they be here?  (check)
-	//if true:
-	return startData($d);
-}
+    function start($d){
+        //Should they be here?  (check)
+        //if true:
+        return startData($d);
+    }
 /*************************
 	changeTurn
 	takes: gameId
 	uses in bizLayer: gameBiz.php->changeTurnData
 	returns:	Nothing
 */
-function changeTurn($d){
-	//can they change the turn?
-	//if true:
-	changeTurnData($d);
-}
+    function changeTurn($d){
+        //can they change the turn?
+        //if true:
+        changeTurnData($d);
+    }
 /*************************
 	checkTurn
 	takes: gameId
@@ -83,7 +83,8 @@ function addScore($d){
 	addScoreData($h[0],$h[1], $score+1);
 }
 
-//function addWinner($gameId, $playerId, $id){
+//function addWinnerData($gameId, $id){
+    
 function addWinner($d){
 	 $h=explode('~',$d);
 	addWinnerData($h[0],$h[1]);

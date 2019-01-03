@@ -9,8 +9,8 @@
   <title>Dots and Boxes</title>
 	<style type="text/css">
 		#background { fill: #DCDCDC; stroke: black; stroke-width: 2px; }
-		.player0   {fill: #990000; stroke: white; stroke-width: 1px; }
-		.player1 {fill: green; stroke: red; stroke-width: 1px; }
+		.player0   {fill: blue; stroke: blue; stroke-width: 1px; }
+		.player1 {fill: red; stroke: red; stroke-width: 1px; }
 		.htmlBlock {position:absolute;top:200px;left:300px;width:200px;height:100px;background:#ffc;padding:10px;display:none;}
 		body{padding:0px;margin:0px;}
 		.box_white{fill:white;stroke-width:2px;stroke:white;}
@@ -43,10 +43,10 @@
     <script src="js/validate.js" type="text/javascript"></script>
     <script src="js/chat.js" type="application/javascript"></script>
 
-	<script src="js/Objects/Box.js" type="text/javascript"></script>
-    <script src="js/Objects/Dot.js" type="text/javascript"></script>
+	<script src="js/objects/Box.js" type="text/javascript"></script>
+    <script src="js/objects/Dot.js" type="text/javascript"></script>
 <!--    <script src="js/Objects/Line.js" type="text/javascript"></script>-->
-	<script src="js/Objects/Piece.js" type="text/javascript"></script>
+	<script src="js/objects/Piece.js" type="text/javascript"></script>
 	<script src="js/gameFunctions.js" type="text/javascript"></script>
     <script src="js/rulesFunctions.js" type="text/javascript"></script>
 	<script src="js/utilFunctions.js" type="text/javascript"></script>
@@ -56,10 +56,11 @@
 			var player="<?php echo $_SESSION['username']?>";
 			//need line to start it all here....
 			ajax.initGameAjax("start", gameId);
-	
+	       
         
 	$(document).ready(function(){
         console.log(document.cookie);
+        setRoom();
 		getChat();
         document.getElementById("newChatForm").addEventListener('submit',function(event) {
             event.preventDefault();
@@ -70,7 +71,16 @@
 	   },false);
      });
         
-     
+    function setRoom(){
+//         console.log('getChat');
+     	MyXHR('get',{method:'setRoom',a:'login',data:gameId}).done(function(json){
+//            console.log(json);
+            if(json.loggedOut) {
+            window.location.replace("login.html");
+            } 
+               
+     	});
+     }   
      
      ////////////////
      // chat stuff
@@ -125,34 +135,34 @@
                  width="100%" height="600px">
                 <!-- Make the background -> 800x600 -->
                 <rect x="0px" y="0px" width="100%" height="100%" id="background"></rect>
-                <text x="20px" y="20px" id="youPlayer">
+                <rect x="55px" y="5px" width="240px" height="40px" id="youPlayRect" fill="black">
+                    
+                </rect>
+                <text x="60px" y="20px" id="youPlayer">
                     You are:
                 </text>
-                <text x="20px" y="40px" id="output">
+                <text x="60px" y="40px" id="youScore">
                     Score: 
                 </text>
-                <text x="100px" y="40px" id="score0">
-                    
+                <text x="110px" y="40px" id="score0">
                 </text>
-                <text x="270px" y="20px" id="nyt" fill="red" display="none">
-                    NOT YOUR TURN!
-                </text>
-                <text x="270px" y="20px" id="nyp" fill="red" display="none">
-                    NOT YOUR PIECE!
-                </text>
-                <text x="520px" y="20px" id="opponentPlayer">
+             
+                <rect x="300px" y="5px" width="245px" height="40px" id="oppPlayRect" fill="black"></rect>
+                <text x="305px" y="20px" id="opponentPlayer">
                     Opponent is:
                 </text>
-                <text x="520px" y="40px" id="output">
+                
+                <text x="305px" y="40px" id="oppScore">
                     Score: 
                 </text>
-                <text x="620px" y="40px" id="score1">
+                <text x="355px" y="40px" id="score1">
+                </text>                    
                     
+                <text x="210px" y="65px" id="result">
                 </text>
-              
-            
-                <text x="900px" y="190px" id="result">
-
+                    
+                <text x="270px" y="65px" id="nyt" fill="red" display="none">
+                    NOT YOUR TURN!
                 </text>
 
             </svg>
